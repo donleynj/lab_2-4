@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lab 7 Intro to jQuery</title>
+<style>.good{color:green}
+		section{margin-top:-400px;}
+        </style>
+</head>
+
+
+<body>
+	<div id="wrapper">
+    	<h2>Lab7</h2>
+        <section>
+        	<h3>This is an h3 tag</h3>
+            <p>Bacon ipsum dolor sit amet bacon tenderloin swine meatloaf meatball, andouille filet mignon capicola drumstick doner landjaeger rump turkey tail pork. Flank beef ribs capicola tenderloin, tri-tip kevin pig. Turducken pastrami ground round turkey tenderloin frankfurter. Spare ribs tenderloin leberkas, filet mignon doner turducken kielbasa fatback pancetta pork loin ribeye capicola.</p>
+
+			<p>Filet mignon chicken pork bresaola pork chop strip steak pig, salami frankfurter tail meatball porchetta kielbasa. Pork loin andouille chuck t-bone pastrami landjaeger shank tri-tip chicken fatback pig shoulder. Prosciutto landjaeger pastrami tri-tip. Tongue shankle short loin bacon beef ham pastrami pork hamburger leberkas flank cow. Bacon spare ribs pork chop chuck sirloin andouille leberkas beef prosciutto short ribs. Beef ribs chicken short ribs hamburger ball tip pig pork chop frankfurter bresaola cow shankle boudin flank.</p>
+
+			<p>Bacon ribeye jowl ground round turducken pastrami. Meatloaf tongue meatball, doner short ribs shoulder pancetta. Pork loin tongue sirloin beef chicken flank ham spare ribs meatloaf. Pork loin sausage t-bone chicken capicola meatloaf ham swine chuck shoulder frankfurter shank tenderloin fatback bacon. Filet mignon bresaola andouille shankle ribeye. Short ribs pig filet mignon, cow pork chop porchetta beef ribs pork loin frankfurter beef tail fatback brisket swine.</p>
+            
+            <p>Bacon ipsum dolor sit amet bacon tenderloin swine meatloaf meatball, andouille filet mignon capicola drumstick doner landjaeger rump turkey tail pork. Flank beef ribs capicola tenderloin, tri-tip kevin pig. Turducken pastrami ground round turkey tenderloin frankfurter. Spare ribs tenderloin leberkas, filet mignon doner turducken kielbasa fatback pancetta pork loin ribeye capicola.</p>
+
+			<p>Filet mignon chicken pork bresaola pork chop strip steak pig, salami frankfurter tail meatball porchetta kielbasa. Pork loin andouille chuck t-bone pastrami landjaeger shank tri-tip chicken fatback pig shoulder. Prosciutto landjaeger pastrami tri-tip. Tongue shankle short loin bacon beef ham pastrami pork hamburger leberkas flank cow. Bacon spare ribs pork chop chuck sirloin andouille leberkas beef prosciutto short ribs. Beef ribs chicken short ribs hamburger ball tip pig pork chop frankfurter bresaola cow shankle boudin flank.</p>
+        </section>
+    
+    
+    
+    
+   
+
+
+
+	</div><!--wrapper close-->
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="jquery.transit.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('section p:last').text('Welcome User');
+			$('section p:first').css('color', 'red');
+			$('section p:last').addClass('good');
+	
+			$('section').hover(handlerIn, handlerOut);
+			
+			function handlerIn(e){
+				$('section').transit({y:'390px'});
+			}
+			
+			function handlerOut(e){
+				$('section').transit({y:'0px'});
+				$('section').clearQueue();
+			}
+	
+	
+		});
+	</script>
+</body>
+</html>
